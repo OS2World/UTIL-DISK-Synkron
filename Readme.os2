@@ -1,0 +1,56 @@
+Synkron 1.6.0 for OS/2 and eCS
+
+
+PURPOSE
+
+Synkron allows to synchronize files between different folders. This can be on one single computer, with external media or other computers, as long as the file system is accessible via network. Synchronization can happen in one direction, or bidirectional, and it can be fine tuned in many ways.
+
+The Qt4 based GUI makes porting to different platforms easy. It was so far available for Windows, Linux and Mac, and now compiled also for OS/2 or eComStation. Even without any further adaptations, it turned out that it even copies EAs on this system! (So this must be a built-in feature of the Qt 4 library functions)
+
+HOMEPAGE
+
+The original homepage of the Synkron project is here:
+
+http://synkron.sourceforge.net/
+
+PREREQUISITES
+
+In order to run with OS/2, Synkron requires a gcc 4.4.4 runtime library available, plus the Qt 4.6.2 libraries:
+
+LIBC063.DLL
+QTCORE4.DLL
+QTGUI4.DLL
+QTNET4.DLL
+QTXML4.DLL
+GCC444.DLL
+
+All this can be found from Netlabs at:
+
+http://svn.netlabs.org/qt4
+
+INSTALLATION
+
+Once the above DLLs are available, it is sufficient to simply copy the synkron.exe to some convenient location and create a program object.
+
+SOURCES
+
+The sources are identical to the version 1.6.0 sources from Sourceforge. Only very little adaptations were made:
+
+- In the project file (synkron.pro), a branch with OS/2 specific definitions was added
+- The program icon was converted into a OS/2 specific format as synkron_os2.ico
+- Correspondingly, also an OS/2 specific resource definition file was created: synkron_os2.rc
+
+For the rest, and with the environment set up for building gcc 4.4.4 and Qt 4.6.2 software, the program can be rebuilt with the following commands:
+
+lrelease synkron.pro
+qmake -os2 synkron.pro
+make
+
+FEEDBACK AND COMMENTS
+
+Feedback and comments about this port:
+
+Cornelis BockemÅhl
+cornelis (DOT) bockemuehl (AT) tele2 (DOT) ch
+
+Basel, Switzerland, November 2010
